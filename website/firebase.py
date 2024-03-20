@@ -16,8 +16,8 @@ def obtenerDatos():
         ref = db.reference(db_path)
         response = ref.get()
         if response:
-            led = response.get("LED", None)
-            temp = response.get("Temperature", None)
+            led = response.get("Led", None)
+            temp = response.get("POT", None)
             return led, temp
         
     except Exception as e:
