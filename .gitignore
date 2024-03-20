@@ -1,0 +1,28 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Poetry
+/poetry.lock
+/pyproject.toml
+
+# Flask
+/website/__pycache__/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
