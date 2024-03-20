@@ -1,26 +1,23 @@
-import pyrebase
 import os
+import firebase_admin
+from firebase_admin import credentials, db
 from dotenv import load_dotenv
 
 load_dotenv()
 
-firebase_config = {
-    "apiKey": os.getenv('FIREBASE_API_KEY'),
-    "authDomain": os.getenv('FIREBASE_AUTH_DOMAIN'),
-    "databaseURL": os.getenv('FIREBASE_DATABASE_URL'),
-}
-
-pyrebase_app = pyrebase.initialize_app(firebase_config)
-firebase_database = pyrebase_app.database()
+# Initialize the app with a service account, granting admin privileges
+firebase_admin.initialize_app(credentials.ApplicationDefault() ,options={
+    'databaseURL': os.getenv('FIREBASE_DATABASE_URL'),
+})
 
 def obtenerDatos():
     db_path = "/"
     try:
-        response = firebase_database.child(db_path).get()
+        ref = db.reference(db_path)
+        response = ref.get()
         if response:
-            result = response.val()
-            led = result.get("LED", None)
-            temp = result.get("Temperature", None)
+            led = response.get("LED", None)
+            temp = response.get("Temperature", None)
             return led, temp
         
     except Exception as e:
