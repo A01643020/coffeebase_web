@@ -5,22 +5,20 @@ const number = document.querySelectorAll('.number');
 const svgIcon = document.querySelector('svg');
 
 switchInput.addEventListener('change', async function() {
-    // Determine the new value of LED based on the switch state
-    const newValue = this.checked ? 1 : 0;
+    const power = this.checked ? 1 : 0;
     try {
-        const response = await fetch('/api/updateLED', {
+        const response = await fetch('/api/power', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ Led: newValue })
+            body: JSON.stringify({ "power": power })
         });
 
         if (!response.ok) {
             throw new Error('Failed to update LED value');
         }
 
-        // Handle UI changes based on the new LED value
         if (this.checked) {
             svgIcon.classList.add('rotateON');
             svgIcon.classList.remove('rotateOFF');

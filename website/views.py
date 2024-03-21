@@ -23,3 +23,4 @@ def power():
     firebase.database.update({
         "Led": data["power"]
     })
+    return jsonify({"message": "LED state updated successfully"}), 200
