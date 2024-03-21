@@ -1,4 +1,4 @@
-from flask import jsonify, render_template,  redirect, url_for, session, Blueprint
+from flask import jsonify, render_template, request, Blueprint
 
 import schedule
 import time
@@ -16,3 +16,10 @@ def home():
 @views.route('/api/data', methods=['GET'])
 def get_data():
     return firebase.obtenerDatos()
+
+@views.route('/api/power', methods=['POST'])
+def power():
+    data = request.get_json()
+    firebase.database.update({
+        "Led": data["power"]
+    })

@@ -12,11 +12,12 @@ firebase_admin.initialize_app(credentials.ApplicationDefault() ,options={
 
 keys = ["Led", "POT"]
 
+database = db.reference('/')
+
 def obtenerDatos():
     db_path = "/"
     try:
-        ref = db.reference(db_path)
-        response = ref.get()
+        response = database.get()
         output = {}
         for key in keys:
             output[key] = response.get(key, None)
