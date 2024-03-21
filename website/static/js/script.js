@@ -10,4 +10,4 @@ async function updateData() {
     });
 }
 
-dataUpdater = setInterval(updateData, 3000);
+const dataUpdater = setInterval(updateData, 3000);
