@@ -5,31 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Bienvenido a tu cafetera inteligente!</title>
     <link rel="stylesheet" href="\static\css\style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manslava/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="headerc">
-        <header>
             <h1 class="title">CoffeeBase</h1>
-            <img src="" alt="" class="icon">
-        </header>
-    </div>
+            <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88px" height="88px" viewBox="0 0 326.05 326.05" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M14.257,275.602C-17.052,220.391,4.253,133.798,69.023,69.01c73.553-73.543,175.256-91.076,227.182-39.16 c0.061,0.068,0.112,0.145,0.195,0.214c-10.392,30.235-43.486,94.567-142.686,129.348C62.842,191.29,27.788,241.972,14.257,275.602z M310.81,48.75c-7.871,18.361-21.57,42.356-45.173,65.957c-23.725,23.735-57.445,47.046-105.208,63.8 C63.49,212.5,36.405,268.149,28.848,295.116c0.357,0.36,0.664,0.733,1.011,1.083c51.921,51.918,153.628,34.386,227.176-39.169 C322.479,191.585,343.526,103.869,310.81,48.75z"></path> </g> </g></svg>
+    </div>    
     <div class="container">
-        <h2 class="title-cont">Tu cafetera inteligente</h2>
-        <div class="mini-containers">
-            <div class="baby-container">
-                <h3 class="title">LED</h3>
-                <p class="number">{{ %</p>
+       <div class="bg"></div>
+        <div class="container-content">
+            <div class="top">
+                <h2 class="title-cont">Tu cafetera inteligente</h2>
+                <label class="switch" style = "align-self: center; margin-top: 2em;">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
             </div>
-            <div class="baby-container">
-                <h3 class="title">Humedad</h3>
-                <p class="number">48</p>
-            </div>
-            <div class="baby-container">
-                <h3 class="title">Distancia</h3>
-                <p class="number">48</p>
+            <div class="mini-containers">
+                <div class="baby-container">
+                    <h3 class="title">LED</h3>
+                    <p class="number">{{  led  }}</p>
+                </div>
+                <div class="baby-container">
+                    <h3 class="title">pot</h3>
+                    <p class="number">{{  pot  }}</p>
+                </div>
             </div>
         </div>
     </div>
+
+<script src="../static/js/script.js"></script>
 </body>
 </html>

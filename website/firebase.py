@@ -17,8 +17,8 @@ def obtenerDatos():
         response = ref.get()
         if response:
             led = response.get("Led", None)
-            temp = response.get("POT", None)
-            return led, temp
+            pot = response.get("POT", None)
+            return led, pot
         
     except Exception as e:
         print(f"Failed to get values: {e}")

@@ -7,11 +7,9 @@ from . import firebase
     
 views = Blueprint('views', __name__)
 
-def show_from_database():
-    new_data = firebase.obtenerDatos()
-    print(new_data)
+led, pot = firebase.obtenerDatos()
 
 
 @views.route('/')
 def home():
-    return render_template("base.html") #, temperatura = temperatura, distancia = distancia)
+    return render_template("base.html", led = led, pot = pot) #, temperatura = temperatura, distancia = distancia)
