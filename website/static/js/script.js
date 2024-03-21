@@ -1,19 +1,13 @@
-const switchInput = document.querySelector('.switch input');
-const babyContainers = document.querySelectorAll('.baby-container');
-const svgIcon = document.querySelector('svg');
+const apiDataContainers = document.querySelectorAll('.api-data');
 
-switchInput.addEventListener('change', function() {
-    if (this.checked) {
-        svgIcon.classList.add('rotateON');
-        svgIcon.classList.remove('rotateOFF');
-        babyContainers.forEach(container => {
-            container.classList.add('active');
-        });
-    } else {
-        svgIcon.classList.remove('rotateON');
-        svgIcon.classList.add('rotateOFF');
-        babyContainers.forEach(container => {
-            container.classList.remove('active');
-        });
-    }
-});
+async function updateData() {
+    console.log("Updating data");
+    const res = await fetch('/api/data');
+    const data = await res.json();
+    apiDataContainers.forEach((container) => {
+        const key = container.getAttribute('data-api-id');
+        container.textContent = data[key];
+    });
+}
+
+dataUpdater = setInterval(updateData, 3000);
