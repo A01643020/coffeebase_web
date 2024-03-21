@@ -20,27 +20,25 @@
         <div class="container-content">
             <div class="top">
                 <h2 class="title-cont">Tu cafetera inteligente</h2>
-                <form id="switchForm" method="POST">
-                    <label class="switch" style="align-self: center; margin-top: 2em;">
-                        <input type="hidden" name="switch_state" value="off">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                </form>                
+                <label class="switch" style = "align-self: center; margin-top: 2em;">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>             
             </div>
             <div class="mini-containers">
                 <div class="baby-container">
-                    <h3 class="title">LED</h3>
-                    <p class="number api-data" data-api-id="Led">{{  data["Led"]  }}</p>
+                    <h3 class="titleC hidden">Temperatura</h3>
+                    <p class="number api-data hidden" data-api-id="Led">{{  data["Led"]  }}</p>
                 </div>
                 <div class="baby-container">
-                    <h3 class="title">pot</h3>
-                    <p class="number api-data" data-api-id="POT">{{  data["POT"]  }}</p>
+                    <h3 class="titleC hidden">Distancia</h3>
+                    <p class="number api-data hidden" data-api-id="POT">{{  data["POT"]  }}</p>
                 </div>
-            </div>
+            </div>            
         </div>
     </div>
 
 <script src="../static/js/script.js"></script>
+<script src="../static/js/style-script.js"></script>
 </body>
 </html>

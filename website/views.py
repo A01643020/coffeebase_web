@@ -8,10 +8,10 @@ from . import firebase
 views = Blueprint('views', __name__)
 
 
-@views.route('/', methods=['POST'])
+@views.route('/', methods=['POST', 'GET'])
 def home():
     data = firebase.obtenerDatos()
-    return render_template("base.html", data = data) #, temperatura = temperatura, distancia = distancia)
+    return render_template("base.html", data = data)
 
 @views.route('/api/data', methods=['GET'])
 def get_data():
