@@ -7,9 +7,12 @@ from . import firebase
     
 views = Blueprint('views', __name__)
 
-led, pot = firebase.obtenerDatos()
-
 
 @views.route('/')
 def home():
-    return render_template("base.html", led = led, pot = pot) #, temperatura = temperatura, distancia = distancia)
+    data = firebase.obtenerDatos()
+    return render_template("base.html", data = data) #, temperatura = temperatura, distancia = distancia)
+
+@views.route('/api/data', methods=['GET'])
+def get_data():
+    return firebase.obtenerDatos()

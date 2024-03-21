@@ -10,16 +10,18 @@ firebase_admin.initialize_app(credentials.ApplicationDefault() ,options={
     'databaseURL': os.getenv('FIREBASE_DATABASE_URL'),
 })
 
+keys = ["Led", "POT"]
+
 def obtenerDatos():
     db_path = "/"
     try:
         ref = db.reference(db_path)
         response = ref.get()
-        if response:
-            led = response.get("Led", None)
-            pot = response.get("POT", None)
-            return led, pot
+        output = {}
+        for key in keys:
+            output[key] = response.get(key, None)
+        return output
         
     except Exception as e:
         print(f"Failed to get values: {e}")
-        return None, None
+        return {}

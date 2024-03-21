@@ -19,6 +19,7 @@ ENV/
 
 # Flask
 /website/__pycache__/
+/website/.env
 
 # IDEs
 .vscode/
