@@ -20,10 +20,13 @@
         <div class="container-content">
             <div class="top">
                 <h2 class="title-cont">Tu cafetera inteligente</h2>
-                <label class="switch" style = "align-self: center; margin-top: 2em;">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
+                <form id="switchForm" method="POST">
+                    <label class="switch" style="align-self: center; margin-top: 2em;">
+                        <input type="hidden" name="switch_state" value="off">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </form>                
             </div>
             <div class="mini-containers">
                 <div class="baby-container">

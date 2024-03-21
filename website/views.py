@@ -8,7 +8,7 @@ from . import firebase
 views = Blueprint('views', __name__)
 
 
-@views.route('/')
+@views.route('/', methods=['POST'])
 def home():
     data = firebase.obtenerDatos()
     return render_template("base.html", data = data) #, temperatura = temperatura, distancia = distancia)
