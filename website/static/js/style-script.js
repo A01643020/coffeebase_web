@@ -16,7 +16,7 @@ switchInput.addEventListener('change', async function() {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to update LED value');
+            throw new Error('Failed to update power');
         }
 
         if (this.checked) {

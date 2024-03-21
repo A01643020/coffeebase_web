@@ -21,6 +21,6 @@ def get_data():
 def power():
     data = request.get_json()
     firebase.database.update({
-        "Led": data["power"]
+        "Encendido": data["power"]
     })
     return jsonify({"message": "LED state updated successfully"}), 200

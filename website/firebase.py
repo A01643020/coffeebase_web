@@ -10,7 +10,7 @@ firebase_admin.initialize_app(credentials.ApplicationDefault() ,options={
     'databaseURL': os.getenv('FIREBASE_DATABASE_URL'),
 })
 
-keys = ["Led", "POT"]
+keys = ["Distacia", "Temperatura", "Encendido", "Humedad"]
 
 database = db.reference('/')
 
